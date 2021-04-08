@@ -20,6 +20,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
-        http.httpBasic().realmName("spring-app").and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().csrf().disable().authorizeRequests().antMatchers("/guest/**").permitAll().anyRequest().authenticated();
+        http.httpBasic().realmName("spring-app").and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and().csrf().disable().authorizeRequests().antMatchers("/guest/**").permitAll().anyRequest().authenticated();
     }
 }
